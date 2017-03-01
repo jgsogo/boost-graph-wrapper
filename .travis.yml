@@ -1,0 +1,56 @@
+os: linux
+services:
+   - docker
+sudo: required
+language: python
+env:
+  global:
+    - CONAN_UPLOAD=1
+    - CONAN_USERNAME="jgsogo"
+    - CONAN_CHANNEL="ci"
+    - CONAN_TOTAL_PAGES=16
+
+  matrix:
+    - CONAN_USE_DOCKER=1 CONAN_CURRENT_PAGE=1
+    - CONAN_USE_DOCKER=1 CONAN_CURRENT_PAGE=2
+    - CONAN_USE_DOCKER=1 CONAN_CURRENT_PAGE=3
+    - CONAN_USE_DOCKER=1 CONAN_CURRENT_PAGE=4
+    - CONAN_USE_DOCKER=1 CONAN_CURRENT_PAGE=5
+    - CONAN_USE_DOCKER=1 CONAN_CURRENT_PAGE=6
+    - CONAN_USE_DOCKER=1 CONAN_CURRENT_PAGE=7
+    - CONAN_USE_DOCKER=1 CONAN_CURRENT_PAGE=8
+    - CONAN_USE_DOCKER=1 CONAN_CURRENT_PAGE=9
+    - CONAN_USE_DOCKER=1 CONAN_CURRENT_PAGE=10
+    - CONAN_USE_DOCKER=1 CONAN_CURRENT_PAGE=11
+    - CONAN_USE_DOCKER=1 CONAN_CURRENT_PAGE=12
+    - CONAN_USE_DOCKER=1 CONAN_CURRENT_PAGE=13
+    - CONAN_USE_DOCKER=1 CONAN_CURRENT_PAGE=14
+    - CONAN_USE_DOCKER=1 CONAN_CURRENT_PAGE=15
+    - CONAN_USE_DOCKER=1 CONAN_CURRENT_PAGE=16
+matrix:
+   include:
+       - os: osx
+         osx_image: xcode7.3 # apple-clang 7.3
+         language: generic
+         env:
+       - os: osx
+         osx_image: xcode7.1 # apple-clang 7.0
+         language: generic
+         env:
+       - os: osx
+         osx_image: xcode6.4 # apple-clang 6.1
+         language: generic
+         env:
+       - os: osx
+         osx_image: xcode8.0 # apple-clang 8.0
+         language: generic
+         env:
+
+install:
+  - chmod ugo+x ./.travis/install.sh
+  - chmod ugo+x ./.travis/run.sh
+  - ./.travis/install.sh
+
+script:
+  - ./.travis/run.sh
+

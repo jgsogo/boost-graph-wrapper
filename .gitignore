@@ -1,0 +1,64 @@
+
+# Python, Django, PyCharm
+*pyc
+bin/
+include/
+lib/
+local/
+.idea/
+*.sqlite3
+
+# CMake stuff
+CMakeCache.txt
+*/CMakeFiles/*
+CMakeFiles/*
+Makefile
+*cmake_install.cmake
+
+# Conan
+conanbuildinfo.cmake
+conaninfo.txt
+
+# Compiled Object files
+*.slo
+*.lo
+*.o
+*.obj
+
+# Precompiled Headers
+*.gch
+*.pch
+
+# Compiled Dynamic libraries
+*.so
+*.dylib
+*.dll
+
+# Fortran module files
+*.mod
+
+# Compiled Static libraries
+*.lai
+*.la
+*.a
+*.lib
+
+# Executables
+*.exe
+*.out
+*.app
+
+# Secret files
+secret.py
+file.log
+webapp/static
+*.json
+basico_sm.tsv
+logs
+
+# Cpp stuff
+build*/
+tests/config_tests.h
+0_*.bat
+Testing/
+
