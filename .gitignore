@@ -61,4 +61,5 @@ build*/
 tests/config_tests.h
 0_*.bat
 Testing/
+*_export.h
 
